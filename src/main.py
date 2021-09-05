@@ -1,12 +1,12 @@
 from normal_queue import NormalQueue
 from priority_queue import PriorityQueue
 
-test_queue = NormalQueue()
+# test_queue = NormalQueue()
 
-for i in range(3):
-    test_queue.update_queue()
+# for i in range(3):
+#     test_queue.update_queue()
 
-print(test_queue.call_client(3))
+# print(test_queue.call_client(3))
 
 
 test_priority_queue = PriorityQueue()
