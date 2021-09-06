@@ -1,15 +1,18 @@
 import abc
+from typing import List
+
+from constants import DEFAULT_MAX_SIZE, DEFAULT_MIN_SIZE
 
 
 class BaseQueue(metaclass=abc.ABCMeta):
     code: int = 0
-    queue: list = []
-    clients: list = []
-    password: str = " "
+    queue: List[str] = []
+    clients: List[str] = []
+    password: str = ""
 
     def reset_queue(self) -> None:
-        if self.code >= 200:
-            self.code = 0
+        if self.code >= DEFAULT_MAX_SIZE:
+            self.code = DEFAULT_MIN_SIZE
         else:
             self.code += 1
 

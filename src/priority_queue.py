@@ -1,10 +1,13 @@
+from typing import Dict, List, Union
+
 from base_queue import BaseQueue
+from constants import PRIORITY_CODE
 
 
 class PriorityQueue(BaseQueue):
 
     def password_generator(self) -> None:
-        self.password = f"PR{self.code}"
+        self.password = f"${PRIORITY_CODE}{self.code}"
 
     def call_client(self, cashier: int) -> str:
         actual_client: str = self.queue.pop(0)
@@ -13,10 +16,12 @@ class PriorityQueue(BaseQueue):
         return(f"Client number {actual_client} , go to cashier {cashier}")
 
     def statistics(self, date: str, agency: int, flag: str) -> dict:
+
+        statistics: Dict[str, Union[List[str], str, int]] = {}
+
         if flag != "detail":
-            statistics = {f"{agency}-{date}": len(self.clients)}
+            statistics[f"{agency}-{date}"] = len(self.clients)
         else:
-            statistics = {}
             statistics["date"] = date
             statistics["agency"] = agency
             statistics["clients"] = self.clients
