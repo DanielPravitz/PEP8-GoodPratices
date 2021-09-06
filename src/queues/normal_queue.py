@@ -1,5 +1,5 @@
-from base_queue import BaseQueue
-from constants import NORMAL_CODE
+from queues.base_queue import BaseQueue
+from constants.constants import NORMAL_CODE
 
 
 class NormalQueue(BaseQueue):

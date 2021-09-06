@@ -1,7 +1,7 @@
 import abc
 from typing import List
 
-from constants import DEFAULT_MAX_SIZE, DEFAULT_MIN_SIZE
+from constants.constants import DEFAULT_MAX_SIZE, DEFAULT_MIN_SIZE
 
 
 class BaseQueue(metaclass=abc.ABCMeta):

@@ -1,27 +1,14 @@
 # from normal_queue import NormalQueue
 # from priority_queue import PriorityQueue
-from factory_queue import FactoryQueue
+from queues.factory_queue import FactoryQueue
+from statistics_classes.statistic_detailed import StatisticDetailed
+from statistics_classes.statistic_summarized import StatisticSummarized
 
 
-# test_queue = NormalQueue()
-
-# for i in range(3):
-#     test_queue.update_queue()
-
-# print(test_queue.call_client(3))
-
-
-# test_priority_queue = PriorityQueue()
-
-# for i in range(3):
-#     test_priority_queue.update_queue()
-#     print(test_priority_queue.call_client(i))
-
-
-# print(test_priority_queue.statistics("02-10-2021", 10, "detail"))
-
-test = FactoryQueue.get_queue("normal")
+test = FactoryQueue.get_queue("priority")
 
 for i in range(3):
-   test.update_queue()
-   print(test.call_client(i))
+    test.update_queue()
+    print(test.call_client(i))
+
+print(test.statistics(StatisticDetailed("05/09/2021", 120)))
